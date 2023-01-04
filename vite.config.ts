@@ -5,7 +5,6 @@ import viteEslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
@@ -13,13 +12,13 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
         compact: false,
       },
+      include: ['**/*.tsx', '**/*.ts'],
     }),
     viteEslint(),
   ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@assets': resolve(__dirname, 'src/assets'),
     },
   },
 })
